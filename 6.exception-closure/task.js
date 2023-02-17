@@ -10,13 +10,11 @@ function parseCount(number) {
 }
 
 function validateCount(number) {
-  let result;
   try {
-    result = parseCount(number);
+    return parseCount(number);
   } catch (error) {
-    result = error;
+    return error;
   }
-  return result;
 }
 
 // Задача 2
@@ -43,12 +41,11 @@ class Triangle {
 }
 
 function getTriangle(a, b, c) {
-  let result;
   try {
-    result = new Triangle(a, b, c);
+    return new Triangle(a, b, c);
   } catch (error) {
     let errMessage = "Ошибка! Треугольник не существует";
-    result = {
+    return {
       get perimeter() {
         return errMessage;
       },
@@ -57,5 +54,4 @@ function getTriangle(a, b, c) {
       },
     };
   }
-  return result;
 }
