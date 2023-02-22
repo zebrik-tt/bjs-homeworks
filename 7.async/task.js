@@ -10,13 +10,12 @@ class AlarmClock {
     }
     if (this.alarmCollection.some((elem) => elem.time === time)) {
       console.warn("Уже присутствует звонок на это же время");
-    } else {
-      this.alarmCollection.push({
-        callback: callback,
-        time: time,
-        canCall: true,
-      });
     }
+    this.alarmCollection.push({
+      callback: callback,
+      time: time,
+      canCall: true,
+    });
   }
 
   removeClock(time) {
